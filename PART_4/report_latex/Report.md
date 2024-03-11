@@ -1,31 +1,30 @@
-![image](graphics/polito_logo_2021_blu.jpg)\
+![image](graphics/polito_logo_2021_blu.jpg)
 
 ------------------------------------------------------------------------
 
 **\
 Report**\
-*FreeRTOS: Ingress Firewall*\
+*FreeRTOS: Ingress Firewall*
 
 ------------------------------------------------------------------------
 
 
 
-Giorgio {.smallcaps}\
+Giorgio
 
 
 
-Luca {.smallcaps}\
+Luca
 
 
 
-Michele {.smallcaps}\
+Michele
 
 
 
-Gianfranco {.smallcaps}\
+Gianfranco
 
 
-:::
 
 # Introduction
 
@@ -39,7 +38,7 @@ fields, such as IP addresses, ports and protocol, and allowing or
 denying the entry of each single packet traversing the IP stack of
 FreeRTOS. In our case the packets are generated with the **Scapy** tool,
 which generates packets based on various protocols ( e.g. TCP, UDP,
-ICMP).\
+ICMP).
 The rules are defined as a **whitelist**, meaning that only those
 packets that match with one of the rules are allowed. The following
 snippet represents the rule type we defined. These rules are defined at
@@ -129,7 +128,7 @@ definition of the function is:
 The aforementioned function will return the value *0* when the packet
 meets one of the defined rules, meaning that it is an allowed packet,
 whereas, the value 1 when the packet is filtered as ineligible for
-passage, hence, being a packet that doesn't respect the defined rules.\
+passage, hence, being a packet that doesn't respect the defined rules.
 The input parameters of the **checkPacketAgainstRules** function are:
 
 1.  The structure of the ruleset defined at run-time in the rules.h
