@@ -1,6 +1,3 @@
-::: titlepage
-[Computer Architecture and\
-Operating Systems]{.smallcaps}\
 ![image](graphics/polito_logo_2021_blu.jpg)\
 
 ------------------------------------------------------------------------
@@ -11,23 +8,23 @@ Report**\
 
 ------------------------------------------------------------------------
 
-\
+
 
 Giorgio {.smallcaps}\
 
-\
+
 
 Luca {.smallcaps}\
 
-\
+
 
 Michele {.smallcaps}\
 
-\
+
 
 Gianfranco {.smallcaps}\
 
-\
+
 :::
 
 # Introduction
@@ -120,7 +117,7 @@ distinguished based on the possible types of IP addresses associated
 with a given packet. However, we will focus exclusively on analyzing
 *IPv4 packets*.
 
-\
+
 The **firewall** is implemented by the *checkPacketAgainstRules*
 function that filters the ingress packets by using the predefined rules.
 The packet filter, was inserted right after Kernel's routine checks on
@@ -231,8 +228,8 @@ This function will write to the standard output, which is then parsed by
 the *pcap.py* script that parses the log output by recognizing specific
 keys related to dropped packets. The dropped packets will be transformed
 in packets representable in *.pcap* format and saved in the
-*packets.pcap* file.\
-\
+*packets.pcap* file.
+
 The third case, instead, deals with **ICMP** packets. At the
 implementation level, a pointer **pxProtocolHeaders** is extracted using
 this procedure.
@@ -249,8 +246,8 @@ address, and the protocol, for those packets that do not carry
 information regarding the ports. If the packet is discarded, the
 function **writeToPcap** is invoked with **usSourcePort** and
 **usDestinationPort** statically set to -1, as they are not defined by
-ICMP protocol\
-\
+ICMP protocol
+
 The default case treats all remaining protocols by performing a check on
 the addresses and the protocol defined in the rules. Again, the function
 used is the **uint8_t checkIPs** function abovementioned.
@@ -311,12 +308,12 @@ shown.
 ### Sent Packets {#sent-packets .unnumbered}
 
 ![Packets generated with scapy and sent to the FreeRTOS
-instance](graphics/scapyRules.png){width="90%"}
+instance](graphics/scapyRules.png)
 
 ### Firewall: Dropped Packets {#firewall-dropped-packets .unnumbered}
 
 ![Generated PCAP of the packets dropped by the
-firewall](images/droppedPcap.png){width="90%"}
+firewall](images/droppedPcap.png)
 
 As the images show the designed firewall is able to **effectively**
 filter the non-permitted packets by not allowing them and therefore
@@ -341,14 +338,14 @@ placed either before the firewall, if used in blacklist, in order to
 better set the rules; or after the firewall in order to perform a more
 thorough checks on the allowed packets.
 
-![Initial PCAP](images/snort.png){width="90%"}
+![Initial PCAP](images/snort.png)
 
-\
+
 For now, we decided to position the IDS before the firewall in order to
 get more information regarding the Ingress Flow. Additionally, the only
 rule we have set for now is to produce an alert for incoming and
 outgoing ICMP packets, which can be exploited to perform some attacks
-such as ICMP flooding attacks.\
+such as ICMP flooding attacks.
 Of course, more rules can be added. Hence, this is why we inserted this
 solution still as a *Future Work*.
 
