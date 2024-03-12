@@ -1,4 +1,4 @@
-# GROUP 5
+# Firewall on FreeRTOS
 
 ## PART 1
 - Installation instructions for QEMU, compile from source and target compile options
